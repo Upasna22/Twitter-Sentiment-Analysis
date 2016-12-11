@@ -1,0 +1,118 @@
+﻿REPORT- PART B :
+
+Determine the sentiment of each tweet:
+We need to compute the sentiment of each tweet based on the sentiment scores of the terms.The goal is to find the tweets that convey a positive meaning
+and the tweets that convey a negative meaning. We are given a list of words with pre-computed sentiment scores in AFINN.txt , using which we compare the
+text part of our tweet and compute scores accordingly.
+ 
+Algorithm:
+* First, build the scores dictionary.For this , extract each line from the sentiment file and split with 
+a "\t" and store each term and its score in a dictionary "scores".
+* To handle biwords and triwords : for eg : cashing in -2 and, does not work -3 , we need to split by spaces . If the length of the split 
+list is 2 , then store it in a list "term_o" and its scores in "score_o" . Similarly if length of split list is 3 , do the same.
+* Now, iterate over each line of tweet and perform sentiment analysis by comparing with the scores dictionary.
+* Compare each word of the tweet with the word from the scores dictionary and compute score.
+* Handle biwords and triwords accordingly. For bi-words if we get a match for a word , we check the next word also to see if it matches.
+  Similarly we process tri-words.
+* Once we get the sentiment score of each tweet (sum of scores for each word of tweet), we put the scores and the respective tweets in a list
+of lists. 
+* Sort the list and extract the top ten highest sentiment tweets and bottom ten lowest sentiment tweets.
+
+OUTPUT :
+
+The top ten highest sentiment tweets are:
+[13.0, 'HarryStyles you are so kind and compassionate I love you Youre a beautiful beautiful man']
+[13.0, 'Have a beautiful new week hope its your best yet praying your week is filled with Yahweh Gods blessings peace favor amp protection']
+[12.0, 'My cousins husband posted on my wall on fb and its so nice 😭 lol ive only talked to him maybe like twice lmfao']
+[12.0, 'RT rlplate HuttonPascale No way LOL Excited abt the wedding You were wonderful tonight You amp KavanjSmith are perfect together Hea…']
+[12.0, 'I just entered to win this awesome White Orchid Ultrasonic Aroma Diffuser You can enter to win too httpstco8ciYt70KZS']
+[11.0, 'Good luck man hope you do great LiquidNuckleDu']
+[11.0, 'BethanyMota happy easter beth🌸hope you have an amazing dayampare feeling better🐇💞i love you so muchyour my happiess😘 httpstcolYN9MpOI2O']
+[11.0, 'RT TheGospels Love each other as I have loved u Greater love has no one than this that he lay down his life for his friends John 15…']
+[11.0, 'RT kellyclarkson Happy Easter River loved the Easter Bunny about as much as she loved Santa ha happycamper httpstcoCS3yEzwVox']
+[11.0, 'MAN I just love that fact Quantico is my Sunday night addiction This show is so freaking awesome and amazing QuanticoTV']
+The bottom ten lowest sentiment tweets are:
+[-12.0, 'RT PeterBotte Syracuse lost to St Johns who lost to Incarnate Word who lost to Our Lady of the Lake who lost to Univ of Arts amp Scie…']
+[-12.0, 'ladies stop checking another bitch over a nigga that aint yours either gone get your feelings hurt or your ass whooped OR BOTH 😂😏']
+[-12.0, 'RT TwistedTrap Do I have time for your bullshit                   no no no        no          no     no         no        no          …']
+[-12.0, 'Niggas be mad on Arizona Teachill the fuck out']
+[-13.0, 'RT ThotsLoveAbdi Bitch ass nigga doing it for the Rts  Square ass nigga Oth 💯 httpstcoHWxdqc5onC']
+[-15.0, 'Honestly tired of my fucking bitch ass family 😒']
+[-15.0, 'Niggas just dgaf no more and thats why they ass getting catfished by other niggas']
+[-15.0, 'RT ochman101 The devil is a liar The devil is a liar The devil is a liar The devil is a liar The devil is a liar httpstconkwWhTtkFd']
+[-19.0, 'hate when ppl spell my name wrong its LONDONN bitch not London  Londan  or Lundan bitch spell my shit Rigjt']
+[-19.0, 'bitch stfu ☺️☺️☺️ you bad built ass hoe you tall and walk so bad bent over ass 😂😂😂😂 httpstcoysuMdUoz7E']
+
+**********************************************************************************************************************************************************************
+
+Happiest Breaking Bad actor:
+
+Here, we need to find the list of user names from user_names.txt and their average sentiment scores in decreasing order.
+
+Algorithm:
+* First, build the scores dictionary.For this , extract each line from the sentiment file and split with 
+a "\t" and store each term and its score in a dictionary "scores".
+* To handle biwords and triwords : for eg : cashing in -2 and, does not work -3 , we need to split by spaces . If the length of the split 
+list is 2 , then store it in a list "term_o" and its scores in "score_o" . Similarly if length of split list is 3 , do the same.
+* Then, extract each row from the csv file using the csv file reader. Store the users in a list and the tweets in another list.
+* Use a dictionary to store the users as the keys and the corresponding tweets as the values.
+* Compute the sentiment scores for each tweet of the user by comparing with the scores dictionary.
+* Add the scores for each user and calculate the average.
+* Sort the dictionary and print the average scores of each user in decreasing order.
+* The first user is the happiest actor.
+
+OUTPUT:
+
+The list of user names and average sentiment scores in decreasing order is :
+['Krystenritter', 2.0714285714285716]
+['mrbobodenkirk', 2.04]
+['quiethandfilms', 1.797979797979798]
+['RjMitte', 1.597938144329897]
+['aaronpaul_8', 1.5483870967741935]
+['deanjnorris', 1.49]
+['CharlesEbaker', 1.4848484848484849]
+['betsy_brandt', 1.37]
+['LuisMoncada77', 1.3333333333333333]
+['BryanCranston', 1.21]
+['DanielMoncada80', 1.15625]
+['mattjonesisdead', -0.010416666666666666]
+
+
+ The happiest actor is
+[['Krystenritter', 2.0714285714285716]]  
+
+*************************************************************************************************************************************************************************
+Happiest State:
+Here , we need to find the average sentiment score of each U.S State.
+
+Algorithm:
+* First, build the scores dictionary.For this , extract each line from the sentiment file and split with 
+a "\t" and store each term and its score in a dictionary "scores".
+* To handle biwords and triwords : for eg : cashing in -2 and, does not work -3 , we need to split by spaces . If the length of the split 
+list is 2 , then store it in a list "term_o" and its scores in "score_o" . Similarly if length of split list is 3 , do the same.
+* Extract each line from the tweet_file.
+*To find the set of states and their tweets,
+
+a) extract the 'place' attribute.
+b) If ['place']['country'] is == "United States" , extract those particular states.
+ For eg: state_full = l['place']['full_name'] .
+c)Then check the place type. If it is "admin" , split with "," and use state_split[0].If it is "city" , split with "," and use state_split[1].
+d) Some locations can be obtained from['user']['location'].
+* Store the states and their respective tweets in a dictionary.
+* Perform sentiment analysis of each of the tweets, add the scores and calculate the average for each state.
+* Sort the list in decreasing order of average scores and the happiest state is the first state is sorted list.
+
+OUTPUT:
+
+The 5 happiest states are
+['TN', 11.0]
+['AL', 6.0]
+['NM', 5.0]
+['IN', 4.0]
+['UT', 4.0]
+The 5 unhappiest states are
+['ND', -2.0]
+['AZ', -2.0]
+['OH', -3.0]
+['HI', -3.0]
+['MO', -5.0]

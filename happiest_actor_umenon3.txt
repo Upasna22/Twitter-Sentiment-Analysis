@@ -1,0 +1,17 @@
+The list of user names and average sentiment scores in decreasing order is :
+['Krystenritter', 2.0505050505050506]
+['mrbobodenkirk', 2.01]
+['quiethandfilms', 1.797979797979798]
+['CharlesEbaker', 1.6464646464646464]
+['deanjnorris', 1.63]
+['aaronpaul_8', 1.59]
+['RjMitte', 1.5876288659793814]
+['betsy_brandt', 1.51]
+['DanielMoncada80', 1.3298969072164948]
+['LuisMoncada77', 1.288659793814433]
+['BryanCranston', 1.21]
+['mattjonesisdead', -0.010416666666666666]
+
+
+ The happiest actor is
+[['Krystenritter', 2.0505050505050506]]
