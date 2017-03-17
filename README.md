@@ -1,3 +1,3 @@
 # Twitter-Sentiment-Analysis
 
-Twitter Sentiment Analysis - Refer two read me files for additional information.
+Twitter Sentiment Analysis of Breaking Bad tweets - Refer two read me files for additional information.
